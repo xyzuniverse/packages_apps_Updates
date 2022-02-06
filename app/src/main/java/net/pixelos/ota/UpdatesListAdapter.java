@@ -62,6 +62,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     private String mDownloadId = null;
     private UpdaterController mUpdaterController;
+    private final UpdatesListActivity mActivity;
     private UpdateInfo mUpdate;
 
     private AlertDialog infoDialog;
@@ -69,7 +70,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     private Context mContext;
     private LocalBroadcastManager mBroadcastManager;
 
-    UpdatesListAdapter() {
+    UpdatesListAdapter(UpdatesListActivity activity) {
+        mActivity = activity;
     }
 
     @Override
@@ -96,7 +98,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     void setUpdaterController(UpdaterController updaterController) {
         mUpdaterController = updaterController;
-        notifyDataSetChanged();
     }
 
     @SuppressLint("SetTextI18n")
@@ -385,7 +386,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                     getDeleteDialog().show();
                     return true;
                 case R.id.menu_export_update:
-                    exportUpdate();
+                    if (mActivity != null) {
+                        mActivity.exportUpdate(mUpdate);
+                    }
                     return true;
             }
             return false;
@@ -427,13 +430,6 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 .setPositiveButton(android.R.string.ok,
                         (dialog, which) -> Utils.triggerUpdate(mContext))
                 .setNegativeButton(android.R.string.cancel, null);
-    }
-
-    private void exportUpdate() {
-        Intent intent = new Intent(UpdatesActivity.ACTION_EXPORT_UPDATE);
-        intent.putExtra(UpdatesActivity.EXTRA_UPDATE_NAME, mUpdate.getName());
-        intent.putExtra(UpdatesActivity.EXTRA_UPDATE_FILE, mUpdate.getFile());
-        mBroadcastManager.sendBroadcast(intent);
     }
 
     private void showInfoDialog() {

@@ -16,6 +16,9 @@
  */
 package net.pixelos.ota;
 
+import static net.pixelos.ota.model.UpdateStatus.UNKNOWN;
+
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -24,7 +27,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -33,10 +36,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.widget.Toolbar;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
@@ -65,8 +69,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
-import static net.pixelos.ota.model.UpdateStatus.UNKNOWN;
-
 public class UpdatesActivity extends UpdatesListActivity implements UpdateListener {
 
     private static final String TAG = "UpdatesActivity";
@@ -75,13 +77,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
 
     public static final String ACTION_SHOW_SNACKBAR = "action_show_snackbar";
     public static final String EXTRA_SNACKBAR_TEXT = "extra_snackbar_text";
-
-    public static final String ACTION_EXPORT_UPDATE = "action_export_update";
-    public static final String EXTRA_UPDATE_NAME = "extra_snackbar_text";
-    public static final String EXTRA_UPDATE_FILE = "extra_update_file";
-
-    private String mExportUpdateName;
-    private File mExportUpdateFile;
 
     private UpdaterService mUpdaterService;
     private BroadcastReceiver mBroadcastReceiver;
@@ -97,10 +92,13 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
         @Override
         public void onServiceConnected(ComponentName className,
                                        IBinder service) {
+            Log.d(TAG, "onServiceConnected");
             UpdaterService.LocalBinder binder = (UpdaterService.LocalBinder) service;
             mUpdaterService = binder.getService();
             mAdapter.setUpdaterController(mUpdaterService.getUpdaterController());
-            getUpdatesList();
+            if (mToBeExported == null){
+                getUpdatesList();
+            }
         }
 
         @Override
@@ -110,17 +108,27 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
             mAdapter.notifyDataSetChanged();
         }
     };
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
-        if (grantResults.length > 0 &&
-                grantResults[0] == PackageManager.PERMISSION_GRANTED &&
-                requestCode == ExportUpdateService.EXPORT_STATUS_PERMISSION_REQUEST_CODE) {
-            exportUpdate();
-        }
-    }
 
-    private void updateRefreshButtonState(boolean enabled){
+    private UpdateInfo mToBeExported = null;
+    private final ActivityResultLauncher<Intent> mExportUpdate = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intent = result.getData();
+                    if (intent != null) {
+                        Uri uri = intent.getData();
+                        exportUpdate(uri);
+                    }else{
+                        mToBeExported = null;
+                        getUpdatesList();
+                    }
+                }else{
+                    mToBeExported = null;
+                    getUpdatesList();
+                }
+            });
+
+    private void updateRefreshButtonState(boolean enabled) {
         mRefreshButtonEnabled = enabled;
         invalidateOptionsMenu();
     }
@@ -131,7 +139,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
         setContentView(R.layout.activity_updates);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        mAdapter = new UpdatesListAdapter();
+        mAdapter = new UpdatesListAdapter(this);
         recyclerView.setAdapter(mAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -170,10 +178,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
                     startDownloadWithWarning();
                 } else if (ACTION_SHOW_SNACKBAR.equals(intent.getAction())) {
                     showSnackbar(intent.getStringExtra(EXTRA_SNACKBAR_TEXT), Snackbar.LENGTH_LONG);
-                } else if (ACTION_EXPORT_UPDATE.equals(intent.getAction())) {
-                    mExportUpdateName = intent.getStringExtra(EXTRA_UPDATE_NAME);
-                    mExportUpdateFile = (File) intent.getSerializableExtra(EXTRA_UPDATE_FILE);
-                    exportUpdate();
                 }
             }
         };
@@ -225,16 +229,18 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
     private void handleExportStatusChanged(int status) {
         switch (status) {
             case ExportUpdateService.EXPORT_STATUS_RUNNING:
-                showSnackbar(R.string.dialog_export_title, Snackbar.LENGTH_SHORT);
+                showSnackbar(R.string.update_export_started, Snackbar.LENGTH_SHORT);
                 break;
             case ExportUpdateService.EXPORT_STATUS_ALREADY_RUNNING:
-                showSnackbar(R.string.toast_already_exporting, Snackbar.LENGTH_SHORT);
+                showSnackbar(R.string.update_export_in_progress, Snackbar.LENGTH_SHORT);
                 break;
             case ExportUpdateService.EXPORT_STATUS_SUCCESS:
-                showSnackbar(R.string.notification_export_success, Snackbar.LENGTH_SHORT);
+                showSnackbar(R.string.update_export_success, Snackbar.LENGTH_SHORT);
+                mToBeExported = null;
                 break;
             case ExportUpdateService.EXPORT_STATUS_FAILED:
-                showSnackbar(R.string.notification_export_fail, Snackbar.LENGTH_SHORT);
+                showSnackbar(R.string.update_export_failed, Snackbar.LENGTH_SHORT);
+                mToBeExported = null;
                 break;
             default:
                 break;
@@ -270,7 +276,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
         intentFilter.addAction(ABUpdateInstaller.ACTION_RESTART_PENDING);
         intentFilter.addAction(ACTION_START_DOWNLOAD_WITH_WARNING);
         intentFilter.addAction(ACTION_SHOW_SNACKBAR);
-        intentFilter.addAction(ACTION_EXPORT_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(mBroadcastReceiver, intentFilter);
     }
 
@@ -375,6 +380,8 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
     }
 
     private void getUpdatesList() {
+        mAdapter.notifyDataSetChanged();
+        Log.d(TAG, "getUpdatesList");
         File jsonFile = Utils.getCachedUpdateList(this);
         if (jsonFile.exists()) {
             try {
@@ -482,11 +489,14 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
         if (mUpdaterService.getUpdaterController().getCurrentUpdate().getDownloadId().equals(Update.LOCAL_ID)) {
             return;
         }
-        if (mUpdateStatus == status){
+        if (mToBeExported != null){
+            Log.d(TAG, "Ignoring handleStatusChange because there's a pending update to export");
             return;
         }
-        if (mUpdateStatus == null){
-            mUpdateStatus = UNKNOWN;
+        Log.d("UpdatesActivity", "handleStatusChange");
+        Log.d("UpdatesActivity", status.toString());
+        if (mUpdateStatus == status){
+            return;
         }
         mUpdateStatus = status;
         handleRefreshButtonState();
@@ -544,6 +554,27 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
         snack.show();
     }
 
+    @Override
+    public void exportUpdate(UpdateInfo update) {
+        mToBeExported = update;
+
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("application/zip");
+        intent.putExtra(Intent.EXTRA_TITLE, update.getName());
+
+        mExportUpdate.launch(intent);
+    }
+
+    private void exportUpdate(Uri uri) {
+        Intent intent = new Intent(this, ExportUpdateService.class);
+        intent.setAction(ExportUpdateService.ACTION_START_EXPORTING);
+        intent.putExtra(ExportUpdateService.EXTRA_SOURCE_FILE, mToBeExported.getFile());
+        intent.putExtra(ExportUpdateService.EXTRA_DEST_URI, uri);
+        startService(intent);
+        getUpdatesList();
+    }
+
     private void handleABInstallationFailed() {
         showSnackbar(R.string.installing_update_error, Snackbar.LENGTH_LONG);
     }
@@ -581,14 +612,5 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateListen
                         })
                 .setNegativeButton(android.R.string.cancel, null)
                 .show();
-    }
-
-    private void exportUpdate() {
-        File dest = new File(Utils.getExportPath(), mExportUpdateName);
-        Intent intent = new Intent(this, ExportUpdateService.class);
-        intent.setAction(ExportUpdateService.ACTION_START_EXPORTING);
-        intent.putExtra(ExportUpdateService.EXTRA_SOURCE_FILE, mExportUpdateFile);
-        intent.putExtra(ExportUpdateService.EXTRA_DEST_FILE, dest);
-        startService(intent);
     }
 }
