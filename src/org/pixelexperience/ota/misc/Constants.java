@@ -31,6 +31,6 @@ public final class Constants {
     static final String PROP_BUILD_VERSION = "org.pixelexperience.version";
     static final String OTA_URL = "https://raw.githubusercontent.com/PixelOS-Pixelish/official_devices/%s/API/updater/%s.json";
     static final String MAINTAINER_URL = "https://github.com/%s";
-    static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/PixelOS-Pixelish/official_devices/%s/API/changelogs/%s.md";
+    static final String DOWNLOAD_WEBPAGE_URL = "https://pixelos.vercel.app/download/%s";
     static final String EXPORT_PATH = "PixelExperience-Updates/";
 }

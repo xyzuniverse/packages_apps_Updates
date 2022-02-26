@@ -160,7 +160,7 @@ public class Utils {
     }
 
     public static String getDownloadWebpageUrl(String fileName) {
-        return String.format(Constants.DOWNLOAD_WEBPAGE_URL, SystemProperties.get(Constants.PROP_BUILD_VERSION), SystemProperties.get(Constants.PROP_DEVICE));
+        return String.format(Constants.DOWNLOAD_WEBPAGE_URL, SystemProperties.get(Constants.PROP_DEVICE));
     }
 
     public static void triggerUpdate(Context context) {
