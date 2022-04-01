@@ -50,6 +50,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
+import org.pixelexperience.ota.ExtrasFragment.UpdateListener;
 import org.pixelexperience.ota.controller.ABUpdateInstaller;
 import org.pixelexperience.ota.controller.UpdaterController;
 import org.pixelexperience.ota.controller.UpdaterService;
@@ -58,6 +59,7 @@ import org.pixelexperience.ota.misc.Constants;
 import org.pixelexperience.ota.misc.Utils;
 import org.pixelexperience.ota.model.UpdateInfo;
 import org.pixelexperience.ota.model.UpdateStatus;
+import org.pixelexperience.ota.model.Update;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,7 +67,7 @@ import java.util.UUID;
 
 import static org.pixelexperience.ota.model.UpdateStatus.UNKNOWN;
 
-public class UpdatesActivity extends UpdatesListActivity {
+public class UpdatesActivity extends UpdatesListActivity implements UpdateListener {
 
     private static final String TAG = "UpdatesActivity";
 
@@ -307,6 +309,25 @@ public class UpdatesActivity extends UpdatesListActivity {
         return true;
     }
 
+    @Override
+    public void addedUpdate(Update update) {
+        UpdaterController controller = mUpdaterService.getUpdaterController();
+        Utils.setPersistentStatus(this, UpdateStatus.Persistent.VERIFIED);
+        controller.addUpdate(update);
+        getUpdatesList();
+        Utils.triggerUpdate(this);
+    }
+
+    @Override
+    public void importDisabled() {
+        showSnackbar(R.string.local_update_import_disabled, Snackbar.LENGTH_LONG);
+    }
+
+    @Override
+    public void importFailed() {
+        showSnackbar(R.string.local_update_import_failure, Snackbar.LENGTH_LONG);
+    }
+
     private void hideUpdates() {
         findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
         findViewById(R.id.recycler_view).setVisibility(View.GONE);
@@ -325,6 +346,14 @@ public class UpdatesActivity extends UpdatesListActivity {
         mExtrasFragment.updatePrefs(Utils.parseJson(jsonFile, false, this));
         Log.d(TAG, "Adding remote updates");
         UpdaterController controller = mUpdaterService.getUpdaterController();
+
+        final Update currUpdate = controller.getCurrentUpdate();
+        if (currUpdate != null && currUpdate.getDownloadId().equals(Update.LOCAL_ID)) {
+            showUpdates();
+            mAdapter.setDownloadId(Update.LOCAL_ID);
+            mAdapter.notifyDataSetChanged();
+            return;
+        }
 
         UpdateInfo newUpdate = Utils.parseJson(jsonFile, true, this);
         boolean updateAvailable = newUpdate != null;
@@ -450,6 +479,9 @@ public class UpdatesActivity extends UpdatesListActivity {
     }
 
     private void handleStatusChange(UpdateStatus status) {
+        if (mUpdaterService.getUpdaterController().getCurrentUpdate().getDownloadId().equals(Update.LOCAL_ID)) {
+            return;
+        }
         if (mUpdateStatus == status){
             return;
         }
