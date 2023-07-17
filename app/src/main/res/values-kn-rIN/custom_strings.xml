@@ -24,18 +24,65 @@
     <string name="update_failed_channel_title">ನವೀಕರಣೆ ವಿಫಲವಾಯಿತು</string>
     <string name="verification_failed_notification">ಧೃಢಿಕರಣ ವಿಫಲವಾಯಿತು</string>
     <string name="verifying_download_notification">ನವಿಕರಣವನ್ನು ದೃಢೀಕರಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="downloading_notification">Downloading</string>
+    <string name="download_paused_notification">Download paused</string>
+    <string name="download_paused_error_notification">Download error</string>
+    <string name="download_completed_notification">Download completed</string>
+    <string name="download_starting_notification">Starting download</string>
+    <string name="update_failed_notification">ನವೀಕರಣೆ ವಿಫಲವಾಯಿತು</string>
+    <string name="check_for_update">Check for update</string>
     <!-- Menu -->
-    <string name="changelog_loading">ಲೋಡ್ ಆಗುತ್ತಿದೆ…</string>
+    <string name="menu_delete_update">Delete</string>
+    <string name="menu_export_update">Export update</string>
     <!-- General -->
+    <string name="update_found_notification">System update available</string>
+    <string name="snack_no_updates_found">No new updates found</string>
+    <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
+    <string name="snack_download_verification_failed">The update verification failed.</string>
+    <string name="snack_download_verified">Download completed.</string>
+    <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
+    <string name="list_download_progress_new"><xliff:g example="12.2" id="filesize_without_unit">%1$s</xliff:g> of <xliff:g example="310 MB" id="filesize_without_unit">%2$s</xliff:g> • <xliff:g example="56" id="percentage">%3$s</xliff:g></string>
     <string name="list_download_progress_eta_new"><xliff:g id="filesize_without_unit" example="310 MB">%2$s</xliff:g> ರಲ್ಲಿ <xliff:g id="filesize_without_unit" example="12.2">%1$s</xliff:g> (<xliff:g id="eta" example="3 minutes left">%3$s</xliff:g>) • <xliff:g id="percentage" example="56">%4$s</xliff:g></string>
+    <string name="list_verifying_update">ನವಿಕರಣವನ್ನು ದೃಢೀಕರಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="list_no_updates">No new update found.</string>
+    <string name="blocked_update_dialog_title">Update blocked</string>
+    <string name="blocked_update_dialog_summary">This update requires a manual clean install procedure (Wiping/Formatting the Data partition before installing the update). Please download the update from our website, reboot to recovery mode and follow the procedures to do so.</string>
     <!-- Actions -->
+    <string name="action_download">Download</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_install">Install</string>
+    <string name="action_delete">Delete</string>
     <string name="confirm_delete_dialog_title">ಫೈಲ್ ಅಳಿಸಿ</string>
     <string name="confirm_delete_dialog_message">ಆಯ್ಕೆಮಾಡಿದ ನವೀಕರಣೆ ಕಡತ ಅಳಿಸುವುದೇ?</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Resume</string>
+    <string name="reboot">I am busy</string>
+    <string name="reboot_needed_dialog_title">Restart needed</string>
+    <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
+    <string name="details_button">View details</string>
     <!-- Installation -->
+    <string name="apply_update_dialog_title">Apply update</string>
+    <string name="apply_update_dialog_message">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart itself in recovery mode to install the update.\n\nNote: This feature requires a compatible Recovery or updates will need to be installed manually.</string>
+    <string name="apply_update_dialog_message_ab">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
+    <string name="installing_update">Installing update package</string>
+    <string name="installing_update_error">Install error</string>
+    <string name="installing_update_finished">Update installed</string>
+    <string name="finalizing_package">Finalizing package installation</string>
+    <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
     <string name="dialog_battery_low_title">ಕ್ಷೀಣಿಸಿದೆ</string>
     <string name="dialog_battery_low_message_pct">ಮಿಂತಿಣಿ ಮಟ್ಟ ತೀರಾ ಕಡಿಮೆಯಿದೆ. ಮುಂದುವರಿಸಲು ನಿಮಗೆ ಕನಿಷ್ಟ <xliff:g id="percent_discharging">%1$d</xliff:g>%% ಚಾರ್ಜ್ ಅಥವಾ ಚಾರ್ಜಿಂಗ್ನಲ್ಲಿ <xliff:g id="percent_charging">%2$d</xliff:g>%% ಬೇಕು.</string>
     <!-- Export update -->
+    <string name="update_export_success">Update exported</string>
+    <string name="update_export_failed">Failed to export update</string>
+    <string name="update_export_in_progress">Already exporting an update</string>
+    <string name="update_export_started">The update is being exported…</string>
     <!-- ETA -->
+    <plurals name="eta_seconds">
+        <item quantity="one">1 second left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds left</item>
+    </plurals>
     <plurals name="eta_minutes">
         <item quantity="one">೧ ನಿಮಿಷ ಬಾಕಿ</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ನಿಮಿಷಗಳು ಬಾಕಿ</item>
@@ -45,9 +92,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ಗಂಟೆಗಳು ಬಾಕಿ</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_on_mobile_data_title">ಎಚ್ಚರಿಕೆ</string>
-    <string name="update_on_mobile_data_message">ನೀವೀಗ ನವೀಕರಣೆಯ ಪ್ಯಾಕೇಜ್ ಅನ್ನು ಡೌನ್‍ಲೋಡ್ ಮಾಡಲು ಹೊರಟಿರುವುರಿ, ಇದರಿಂದ ನಿಮ್ಮ ಡೇಟಾ ಬಳಕೆಯು ಹೆಚ್ಚಾಗಲಿದೆ. ನೀವು ಮುಂದುವರಿಯಲು ಬಯಸುತ್ತೀರಾ?</string>
-    <string name="checkbox_mobile_data_warning">ಪುನಃ ತೋರಿಸಬೇಡ</string>
+    <string name="update_over_metered_network_title">Warning</string>
+    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
+    <string name="checkbox_metered_network_warning">Do not show again</string>
     <!-- Info section -->
     <string name="maintainer_info_title">ಮೆಂಟೈನರ್</string>
     <string name="donate_info_title">ದಾನ</string>
@@ -59,6 +106,12 @@
     <string name="forum_info_title">ವೇದಿಕೆಗಳು</string>
     <string name="forum_info_summary">ವೇದಿಕೆಯ ಪೋಸ್ಟ್ಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
     <string name="error_open_url">ಬ್ರೌಸರ್ನಲ್ಲಿ URL ಅನ್ನು ತೆರೆಯಲು ವಿಫಲವಾಗಿದೆ</string>
-    <!-- Security patch -->
-    <string name="setting_security_patch_level_title">ಭದ್ರತಾ ಅಪ್‌ಡೇಟ್</string>
+    <!-- Local update -->
+    <string name="local_update_title">Local update</string>
+    <string name="local_update_summary">Apply update from local storage</string>
+    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
+    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
+    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_import_install">Install</string>
+    <string name="local_update_import_progress">Importing local update\u2026</string>
 </resources>

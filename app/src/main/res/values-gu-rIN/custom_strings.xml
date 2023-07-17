@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App name -->
+    <string name="app_name">System update</string>
     <!-- Notifications -->
     <string name="export_channel_title">નિકાસ પૂર્ણ</string>
     <string name="new_updates_channel_title">નવા અપડેટ્સ</string>
@@ -29,25 +30,71 @@
     <string name="download_completed_notification">ડાઉનલોડ પૂર્ણ</string>
     <string name="download_starting_notification">ડાઉનલોડ શરુ થઇ રહ્યું છે</string>
     <string name="update_failed_notification">અપડેટ નિષ્ફળ થયું</string>
+    <string name="check_for_update">Check for update</string>
     <!-- Menu -->
     <string name="menu_delete_update">કાઢી નાખો</string>
-    <string name="changelog_loading">લોડ કરી રહ્યું છે…</string>
+    <string name="menu_export_update">Export update</string>
     <!-- General -->
+    <string name="update_found_notification">System update available</string>
     <string name="snack_no_updates_found">કોઇ નવા અપડેટો મળ્યા નહીં</string>
     <string name="snack_updates_check_failed">અપડેટ ચકાસણી નિષ્ફળ. કૃપા કરી તમારું ઇન્ટરનેટ જોડાણ ચકાસો અને ફરી પ્રયાસ કરો.</string>
     <string name="snack_download_failed">અપડેટ ચકાસણી નિષ્ફળ. કૃપા કરી તમારું ઇન્ટરનેટ જોડાણ ચકાસી અને ફરી પ્રયાસ કરો.</string>
+    <string name="snack_download_verification_failed">The update verification failed.</string>
     <string name="snack_download_verified">ડાઉનલોડ પૂર્ણ.</string>
+    <string name="snack_update_not_installable">This update can\'t be installed on top of the current build.</string>
+    <string name="list_download_progress_new"><xliff:g example="12.2" id="filesize_without_unit">%1$s</xliff:g> of <xliff:g example="310 MB" id="filesize_without_unit">%2$s</xliff:g> • <xliff:g example="56" id="percentage">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g example="12.2" id="filesize_without_unit">%1$s</xliff:g> of <xliff:g example="310 MB" id="filesize_without_unit">%2$s</xliff:g> (<xliff:g example="3 minutes left" id="eta">%3$s</xliff:g>) • <xliff:g example="56" id="percentage">%4$s</xliff:g></string>
     <string name="list_verifying_update">અપડેટ ચકાસાઈ રહ્યુ છે</string>
+    <string name="list_no_updates">No new update found.</string>
+    <string name="blocked_update_dialog_title">Update blocked</string>
+    <string name="blocked_update_dialog_summary">This update requires a manual clean install procedure (Wiping/Formatting the Data partition before installing the update). Please download the update from our website, reboot to recovery mode and follow the procedures to do so.</string>
     <!-- Actions -->
+    <string name="action_download">Download</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_install">Install</string>
+    <string name="action_delete">કાઢી નાખો</string>
     <string name="confirm_delete_dialog_title">ફાઇલ કાઢી નાખો</string>
     <string name="confirm_delete_dialog_message">પસંદિત અપડેટ ફાઇલ કાઢી નાખવી છે?</string>
+    <string name="pause_button">Pause</string>
+    <string name="resume_button">Resume</string>
+    <string name="reboot">Reboot</string>
+    <string name="reboot_needed_dialog_title">Restart needed</string>
+    <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
+    <string name="details_button">View details</string>
     <!-- Installation -->
+    <string name="apply_update_dialog_title">Apply update</string>
+    <string name="apply_update_dialog_message">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will restart itself in recovery mode to install the update.\n\nNote: This feature requires a compatible Recovery or updates will need to be installed manually.</string>
+    <string name="apply_update_dialog_message_ab">You are about to upgrade to <xliff:g id="update_name">%1$s</xliff:g>.\n\nIf you press <xliff:g id="ok">%2$s</xliff:g>, the device will begin installing in the background.\n\nOnce completed, you will be prompted to reboot.</string>
+    <string name="installing_update">Installing update package</string>
+    <string name="installing_update_error">Install error</string>
+    <string name="installing_update_finished">Update installed</string>
+    <string name="finalizing_package">Finalizing package installation</string>
+    <string name="dialog_prepare_zip_message">Preliminary update preparation</string>
+    <string name="dialog_battery_low_title">Low battery</string>
+    <string name="dialog_battery_low_message_pct">The battery level is too low, you need at least <xliff:g id="percent_discharging">%1$d</xliff:g>%% of the battery to continue, <xliff:g id="percent_charging">%2$d</xliff:g>%% if charging.</string>
     <!-- Export update -->
+    <string name="update_export_success">Update exported</string>
+    <string name="update_export_failed">Failed to export update</string>
+    <string name="update_export_in_progress">Already exporting an update</string>
+    <string name="update_export_started">The update is being exported…</string>
     <!-- ETA -->
+    <plurals name="eta_seconds">
+        <item quantity="one">1 second left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> seconds left</item>
+    </plurals>
+    <plurals name="eta_minutes">
+        <item quantity="one">1 minute left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> minutes left</item>
+    </plurals>
+    <plurals name="eta_hours">
+        <item quantity="one">1 hour left</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> hours left</item>
+    </plurals>
     <!-- Mobile data warning -->
-    <string name="update_on_mobile_data_title">ચેતવણી</string>
-    <string name="update_on_mobile_data_message">તમે મોબાઇલ ડેટાનો ઉપયોગ કરીને અપડેટ પેકેજ ડાઉનલોડ કરવા જઈ રહ્યાં છો જે સંભવિત ઉચ્ચ ડેટા વપરાશને કારણે જઈ શકે છે. શું તમે આગળ વધવા માંગો છો?</string>
-    <string name="checkbox_mobile_data_warning">ફરીથી ના બતાવશો</string>
+    <string name="update_over_metered_network_title">Warning</string>
+    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
+    <string name="checkbox_metered_network_warning">Do not show again</string>
     <!-- Info section -->
     <string name="maintainer_info_title">જાળવનાર</string>
     <string name="donate_info_title">બક્ષિસ આપો</string>
@@ -59,6 +106,12 @@
     <string name="forum_info_title">ફોરમ</string>
     <string name="forum_info_summary">ફોરમ પોસ્ટ્સ જુઓ</string>
     <string name="error_open_url">બ્રાઉઝરમાં URL ખોલવામાં નિષ્ફળ</string>
-    <!-- Security patch -->
-    <string name="setting_security_patch_level_title">સુરક્ષા અપડેટ</string>
+    <!-- Local update -->
+    <string name="local_update_title">Local update</string>
+    <string name="local_update_summary">Apply update from local storage</string>
+    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
+    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
+    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_import_install">Install</string>
+    <string name="local_update_import_progress">Importing local update\u2026</string>
 </resources>

@@ -15,7 +15,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App name -->
     <string name="app_name">系統更新</string>
+    <!-- Notifications -->
     <string name="export_channel_title">匯出完成</string>
     <string name="new_updates_channel_title">有新的更新</string>
     <string name="ongoing_channel_title">正在進行的下載</string>
@@ -29,8 +31,10 @@
     <string name="download_starting_notification">正在開始下載</string>
     <string name="update_failed_notification">更新失敗</string>
     <string name="check_for_update">檢查更新</string>
+    <!-- Menu -->
     <string name="menu_delete_update">刪除</string>
     <string name="menu_export_update">匯出更新</string>
+    <!-- General -->
     <string name="update_found_notification">系統有更新套件可用！</string>
     <string name="snack_no_updates_found">沒有找到新的更新</string>
     <string name="snack_updates_check_failed">更新檢查失敗。請檢查您的網路連線並稍後重試。</string>
@@ -44,6 +48,7 @@
     <string name="list_no_updates">沒有新更新。</string>
     <string name="blocked_update_dialog_title">更新已被封鎖</string>
     <string name="blocked_update_dialog_summary">此更新需要手動重新安裝過程（在安裝更新之前抹除/格式化數據分區）。 請從我們的網站下載更新，重新啟動到恢復模式，然後按照以下步驟進行操作。 </string>
+    <!-- Actions -->
     <string name="action_download">下載</string>
     <string name="action_pause">暫停</string>
     <string name="action_resume">恢復</string>
@@ -57,6 +62,7 @@
     <string name="reboot_needed_dialog_title">需要重新啟動</string>
     <string name="reboot_needed_dialog_summary">要完成安裝更新，您的裝置必須重新啟動。您想要立刻重新啟動嗎？</string>
     <string name="details_button">檢視詳細</string>
+    <!-- Installation -->
     <string name="apply_update_dialog_title">套用更新</string>
     <string name="apply_update_dialog_message">您將更新至 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下 「<xliff:g id="ok">%2$s</xliff:g>」，裝置將重新啟動進入 Recovery 模式並安裝更新。\n\n注意：這項功能需要相容的 Recovery，否則將需要手動安裝更新。</string>
     <string name="apply_update_dialog_message_ab">您將要升級到 <xliff:g id="update_name">%1$s</xliff:g>。\n\n如果您按下「<xliff:g id="ok">%2$s</xliff:g>」，裝置將在背景進行安裝。\n\n如安裝完成，將會提示重新啟動</string>
@@ -67,10 +73,12 @@
     <string name="dialog_prepare_zip_message">正在準備更新</string>
     <string name="dialog_battery_low_title">電量不足</string>
     <string name="dialog_battery_low_message_pct">電池電量過低，您需要至少 <xliff:g id="percent_discharging">%1$d</xliff:g>%% 的電量才能繼續；如果正在充電，則需要 <xliff:g id="percent_charging">%2$d</xliff:g>%% 的電量才能繼續。</string>
-    <string name="dialog_export_title">將更新導出至内部存储</string>
-
-
-
+    <!-- Export update -->
+    <string name="update_export_success">更新已匯出</string>
+    <string name="update_export_failed">更新匯出失敗</string>
+    <string name="update_export_in_progress">已匯出一筆更新</string>
+    <string name="update_export_started">正在匯出更新…</string>
+    <!-- ETA -->
     <plurals name="eta_seconds">
         <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 秒鐘</item>
     </plurals>
@@ -80,9 +88,11 @@
     <plurals name="eta_hours">
         <item quantity="other">還剩 <xliff:g id="count">%d</xliff:g> 小時</item>
     </plurals>
-    <string name="update_on_mobile_data_title">警告</string>
-    <string name="update_on_mobile_data_message">下載的更新檔案有可能會使用較高的行動數據，您要繼續嗎？</string>
-    <string name="checkbox_mobile_data_warning">不再顯示</string>
+    <!-- Mobile data warning -->
+    <string name="update_over_metered_network_title">警告</string>
+    <string name="update_over_metered_network_message">你即將從計量網路下載更新套件，這可能會產生大量數據用量。是否要繼續？</string>
+    <string name="checkbox_metered_network_warning">不再顯示</string>
+    <!-- Info section -->
     <string name="maintainer_info_title">維護者</string>
     <string name="donate_info_title">捐贈</string>
     <string name="donate_info_summary">支持開發作業</string>
@@ -93,4 +103,12 @@
     <string name="forum_info_title">論壇</string>
     <string name="forum_info_summary">檢視討論區文章</string>
     <string name="error_open_url">在瀏覽器中開啟 URL 失敗</string>
+    <!-- Local update -->
+    <string name="local_update_title">本地更新</string>
+    <string name="local_update_summary">從本機儲存空間的更新檔進行更新</string>
+    <string name="local_update_import_success">你已選擇：\n%1$s\n\n你想要開始安裝嗎?</string>
+    <string name="local_update_import_disabled">無法在下載或安裝更新時匯入本機的更新檔</string>
+    <string name="local_update_import_failure">匯入本機的更新檔失敗</string>
+    <string name="local_update_import_install">安裝</string>
+    <string name="local_update_import_progress">正在匯入本機安裝檔\u2026</string>
 </resources>

@@ -34,8 +34,6 @@
     <!-- Menu -->
     <string name="menu_delete_update">মুছুন</string>
     <string name="menu_export_update">আধুনিকরন এক্সপোর্ট করুন</string>
-    <string name="menu_show_changelog">বর্তমান সংস্করণে যেসব পরিবর্তন হয়েছে</string>
-    <string name="changelog_loading">লোড হচ্ছে…</string>
     <!-- General -->
     <string name="update_found_notification">সিস্টেম আধুনিকরণ পাওয়া গেছে</string>
     <string name="snack_no_updates_found">নতুন কোনো আধুনিকরণ পাওয়া যায়নি</string>
@@ -43,6 +41,13 @@
     <string name="snack_download_failed">আধুনিকরণ ডাউনলোড ব্যর্থ হয়েছে। আপনার ইন্টারনেট সংযোগ চেক করে আবার চেষ্টা করুন।</string>
     <string name="snack_download_verification_failed">আধুনিকীকরণটি যাচাইকরণ ব্যার্থ হয়েছে।</string>
     <string name="snack_download_verified">ডাউনলোড সম্পূর্ণ হয়েছে।</string>
+    <string name="snack_update_not_installable">এই আপডেটটি বর্তমান বিল্ডের উপরে ইনস্টল করা যাবে না।</string>
+    <string name="list_download_progress_new"><xliff:g example="12.2" id="filesize_without_unit">%1$s</xliff:g> এর <xliff:g example="310 MB" id="filesize_without_unit">%2$s</xliff:g> • <xliff:g example="56" id="percentage">%3$s</xliff:g></string>
+    <string name="list_download_progress_eta_new"><xliff:g example="12.2" id="filesize_without_unit">%1$s</xliff:g> এর <xliff:g example="310 MB" id="filesize_without_unit">%2$s</xliff:g> (<xliff:g example="3 minutes left" id="eta">%3$s</xliff:g>) • <xliff:g example="56" id="percentage">%4$s</xliff:g></string>
+    <string name="list_verifying_update">আধুনিকরণ যাচাই করা হচ্ছে</string>
+    <string name="list_no_updates">কোনো নতুন আপডেট পাওয়া যায়নি।</string>
+    <string name="blocked_update_dialog_title">আপডেট ব্লক করা হয়েছে</string>
+    <string name="blocked_update_dialog_summary">এই আপডেটের জন্য একটি ম্যানুয়াল ক্লিন ইন্সটল প্রয়োজন (আপডেট ইনস্টল করার আগে ডেটা পার্টিশনটি মুছা/ফরম্যাট করা)। অনুগ্রহ করে আমাদের ওয়েবসাইট থেকে আপডেট ডাউনলোড করুন, পুনরুদ্ধার মোডে রিবুট করুন এবং ইন্সটল করার পদ্ধতি অনুসরণ করুন।</string>
     <!-- Actions -->
     <string name="action_download">ডাউনলোড</string>
     <string name="action_pause">বিরাম</string>
@@ -54,10 +59,25 @@
     <string name="pause_button">বিরাম</string>
     <string name="resume_button">পুনরারম্ভ</string>
     <string name="reboot">রিবুট</string>
+    <string name="reboot_needed_dialog_title">রিস্টার্ট প্রয়োজন</string>
+    <string name="reboot_needed_dialog_summary">আপডেটটি ইনস্টল করার জন্য, আপনার ডিভাইসটি রিস্টার্ট করা দরকার। আপনি কি এখনই রিস্টার্ট করতে চান?</string>
     <string name="details_button">বিস্তারিত দেখুন</string>
     <!-- Installation -->
     <string name="apply_update_dialog_title">আপডেট প্রয়োগ করা হচ্ছে</string>
+    <string name="apply_update_dialog_message">আপনি আধুনিকরণ করতে চলেছেন <xliff:g id="update_name">%1$s</xliff:g>।\n\n আপনি যদি <xliff:g id="ok">%2$s</xliff:g> চাপেন, আধুনিকরণ স্থাপন করতে ডিভাইসটি নিজেই হবে পুনরুদ্ধারের অবস্থায় চালু।\n\nদ্রষ্টব্যঃ এই বৈশিষ্ট্যটির একটি উপযুক্ত পুনরুদ্ধার অবস্থার প্রয়োজন অথবা আপনাকে অস্বয়ংক্রিয় ভাবে স্থাপন করতে হবে।</string>
+    <string name="apply_update_dialog_message_ab">আপনি আপডেট করতে চলেছেন <xliff:g id="update_name">%1$s</xliff:g>।\n\n আপনি যদি <xliff:g id="ok">%2$s</xliff:g> চাপেন, ডিভাইসটি ব্যাকগ্রাওউন্ডে আপডেটটি ইনস্টল করা শুরু করবে।\n\nসম্পূর্ণ হয়ে গেলে, আপনাকে রিবুট করার অনুরোধ জানানো হবে।</string>
+    <string name="installing_update">আপডেট প্যাকেজটি ইনস্টল করা হচ্ছে</string>
+    <string name="installing_update_error">স্থাপন করতে ব্যর্থ হয়েছে</string>
+    <string name="installing_update_finished">আপডেট ইনস্টল করা হয়েছে</string>
+    <string name="finalizing_package">প্যাকেজ সংস্থাপন চূড়ান্ত করা হচ্ছে</string>
+    <string name="dialog_prepare_zip_message">প্রাথমিক আপডেট প্রস্তুতি</string>
+    <string name="dialog_battery_low_title">ব্যাটারীর চার্জ কম</string>
+    <string name="dialog_battery_low_message_pct">ব্যাটারির কার্যশক্তি খুবই কম, বহাল রাখার জন্য পুরো ব্যাটারির অন্তত শতকরা <xliff:g id="percent_discharging">%1$d</xliff:g>%% অংশ, এবং চার্জিং হলে <xliff:g id="percent_charging">%2$d</xliff:g>%% অংশ প্রয়োজন.</string>
     <!-- Export update -->
+    <string name="update_export_success">আপডেট এক্সপোর্ট করা হয়েছে</string>
+    <string name="update_export_failed">আপডেট এক্সপোর্ট করতে ব্যর্থ হয়েছে</string>
+    <string name="update_export_in_progress">এখনও একটি আপডেট এক্সপোর্ট করা হচ্ছে</string>
+    <string name="update_export_started">আপডেট এক্সপোর্ট করা হচ্ছে…</string>
     <!-- ETA -->
     <plurals name="eta_seconds">
         <item quantity="one">১ সেকেন্ড বাকি</item>
@@ -72,9 +92,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ঘণ্টা বাকি</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_on_mobile_data_title">সাবধানবাণী</string>
-    <string name="update_on_mobile_data_message">আপনি মোবাইল ডাটা ব্যবহার করে আধুনিকীকরণের তথ্য ডাউনলোড করতে চলেছেন, যেটি সম্ভবত অনেক ডাটা ব্যবহার করতে পারে। আপনি কি অগ্রসর হতে চান?</string>
-    <string name="checkbox_mobile_data_warning">আবার দেখাবেন না</string>
+    <string name="update_over_metered_network_title">সতর্কতা</string>
+    <string name="update_over_metered_network_message">আপনি একটি মিটারযুক্ত নেটওয়ার্কে একটি আপডেট প্যাকেজ ডাউনলোড করতে চলেছেন যা সম্ভবত উচ্চ ডেটা ব্যবহারের কারণ হতে চলেছে৷ আপনি কি এগিয়ে যেতে চান?</string>
+    <string name="checkbox_metered_network_warning">পুনরায় দেখাবেন না</string>
     <!-- Info section -->
     <string name="maintainer_info_title">রক্ষণাবেক্ষণকারী</string>
     <string name="donate_info_title">দান করুন</string>
@@ -86,5 +106,12 @@
     <string name="forum_info_title">ফোরাম</string>
     <string name="forum_info_summary">ফোরামে পোস্ট দেখুন</string>
     <string name="error_open_url">ব্রাউজারে URL খুলতে ব্যর্থ</string>
-    <!-- Security patch -->
+    <!-- Local update -->
+    <string name="local_update_title">ফোনে সংরক্ষিত আপডেট</string>
+    <string name="local_update_summary">ফোনের স্টোরেজ থেকে আপডেট প্রয়োগ করুন</string>
+    <string name="local_update_import_success">আপনি বাঁচাই করেছেন:\n%1$s\n\nআপনি কি এটি ইন্সটল করতে চান?</string>
+    <string name="local_update_import_disabled">আপডেট ডাউনলোড বা ইনস্টল করার সময় লোকাল আপডেট ইমপোর্ট করা যাবে না</string>
+    <string name="local_update_import_failure">ফোনে সংরক্ষিত আপডেট সংযোজন করতে ব্যর্থ হয়েছে৷</string>
+    <string name="local_update_import_install">সংস্থাপন</string>
+    <string name="local_update_import_progress">ফোনে সংরক্ষিত আপডেট\u2026 সংযোজন করা হচ্ছে</string>
 </resources>

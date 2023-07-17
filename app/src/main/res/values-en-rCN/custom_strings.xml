@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App name -->
-    <string name="app_name">Systemopdateringer</string>
+    <string name="app_name">System update</string>
     <!-- Notifications -->
     <string name="export_channel_title">Export completion</string>
     <string name="new_updates_channel_title">New updates</string>
@@ -35,7 +35,7 @@
     <string name="menu_delete_update">Delete</string>
     <string name="menu_export_update">Export update</string>
     <!-- General -->
-    <string name="update_found_notification">Ny opdatering tilgængelig</string>
+    <string name="update_found_notification">System update available</string>
     <string name="snack_no_updates_found">No new updates found</string>
     <string name="snack_updates_check_failed">The update check failed. Please check your internet connection and try again later.</string>
     <string name="snack_download_failed">The download failed. Please check your internet connection and try again later.</string>
@@ -58,7 +58,7 @@
     <string name="confirm_delete_dialog_message">Delete the selected update file?</string>
     <string name="pause_button">Pause</string>
     <string name="resume_button">Resume</string>
-    <string name="reboot">Reboot</string>
+    <string name="reboot">重新启动</string>
     <string name="reboot_needed_dialog_title">Restart needed</string>
     <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
     <string name="details_button">View details</string>
@@ -96,16 +96,16 @@
     <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
     <string name="checkbox_metered_network_warning">Do not show again</string>
     <!-- Info section -->
-    <string name="maintainer_info_title">Vedligeholder</string>
-    <string name="donate_info_title">Donér</string>
-    <string name="donate_info_summary">Støt udviklingen</string>
-    <string name="website_info_title">Hjemmeside</string>
-    <string name="website_info_summary">Besøg vores hjemmeside</string>
-    <string name="news_info_title">Nyheder</string>
-    <string name="news_info_summary">Bliv informeret om opdateringer og andre nyheder</string>
+    <string name="maintainer_info_title">Maintainer</string>
+    <string name="donate_info_title">Donate</string>
+    <string name="donate_info_summary">Support the development</string>
+    <string name="website_info_title">Website</string>
+    <string name="website_info_summary">Visit our website</string>
+    <string name="news_info_title">News</string>
+    <string name="news_info_summary">Stay informed about updates and other news</string>
     <string name="forum_info_title">Forum</string>
-    <string name="forum_info_summary">Se forumindlæg</string>
-    <string name="error_open_url">Kunne ikke åbne URL i browser</string>
+    <string name="forum_info_summary">View forum posts</string>
+    <string name="error_open_url">Failed to open URL in browser</string>
     <!-- Local update -->
     <string name="local_update_title">Local update</string>
     <string name="local_update_summary">Apply update from local storage</string>
