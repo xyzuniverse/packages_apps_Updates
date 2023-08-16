@@ -30,7 +30,7 @@
     <string name="download_completed_notification">ダウンロードが完了しました</string>
     <string name="download_starting_notification">ダウンロードを開始中</string>
     <string name="update_failed_notification">更新に失敗しました</string>
-    <string name="check_for_update">Check for update</string>
+    <string name="check_for_update">アップデートを確認</string>
     <!-- Menu -->
     <string name="menu_delete_update">削除</string>
     <string name="menu_export_update">アップデートのエクスポート</string>
@@ -47,7 +47,7 @@
     <string name="list_verifying_update">アップデートを確認</string>
     <string name="list_no_updates">新しい更新はありません。新しい更新を手動で確認するには、更新ボタンを押してください。</string>
     <string name="blocked_update_dialog_title">更新をブロックしました</string>
-    <string name="blocked_update_dialog_summary">This update requires a manual clean install procedure (Wiping/Formatting the Data partition before installing the update). Please download the update from our website, reboot to recovery mode and follow the procedures to do so.</string>
+    <string name="blocked_update_dialog_summary">このアップデートでは、手動クリーンインストールの作業 (アップデートをインストールする前にデータパーティションのワイプ/フォーマット) が必要です。 アップデートを私達のウェブサイトからダウンロードしてリカバリーモードへ再起動し、手順に従って下さい。</string>
     <!-- Actions -->
     <string name="action_download">ダウンロード</string>
     <string name="action_pause">一時停止</string>
@@ -59,9 +59,9 @@
     <string name="pause_button">一時停止</string>
     <string name="resume_button">再開</string>
     <string name="reboot">再起動</string>
-    <string name="reboot_needed_dialog_title">Restart needed</string>
-    <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
-    <string name="details_button">View details</string>
+    <string name="reboot_needed_dialog_title">再起動する必要があります。</string>
+    <string name="reboot_needed_dialog_summary">アップデートのインストールを完了するには、端末の再起動が必要です。今すぐ再起動しますか?</string>
+    <string name="details_button">詳細を表示</string>
     <!-- Installation -->
     <string name="apply_update_dialog_title">アップデートを適用</string>
     <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g>にアップデートしようとしています。\n\n<xliff:g id="ok">%2$s</xliff:g>を押すと、アップデートをインストールするために端末をリカバリーモードでに再起動します。\n\n注意: この機能には対応したリカバリーが必要です。なければ手動でインストールする必要があります。</string>
@@ -74,10 +74,10 @@
     <string name="dialog_battery_low_title">バッテリー残量少</string>
     <string name="dialog_battery_low_message_pct">バッテリー残量が不足しています。続行するには<xliff:g id="percent_discharging">%1$d</xliff:g>%%、充電時は<xliff:g id="percent_charging">%2$d</xliff:g>%%のバッテリー残量が必要です。</string>
     <!-- Export update -->
-    <string name="update_export_success">Update exported</string>
-    <string name="update_export_failed">Failed to export update</string>
-    <string name="update_export_in_progress">Already exporting an update</string>
-    <string name="update_export_started">The update is being exported…</string>
+    <string name="update_export_success">アップデートのエクスポート</string>
+    <string name="update_export_failed">アップデートのエクスポートに失敗しました</string>
+    <string name="update_export_in_progress">既にアップデートをエクスポートしています</string>
+    <string name="update_export_started">アップデートをエクスポート中です…</string>
     <!-- ETA -->
     <plurals name="eta_seconds">
         <item quantity="other">残り<xliff:g id="count">%d</xliff:g>秒</item>
@@ -89,9 +89,9 @@
         <item quantity="other">残り<xliff:g id="count">%d</xliff:g>時間</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_over_metered_network_title">Warning</string>
-    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_metered_network_warning">Do not show again</string>
+    <string name="update_over_metered_network_title">警告</string>
+    <string name="update_over_metered_network_message">従量課金制のネットワークでアップデートパッケージをダウンロードしようとしており、データ使用量が増加する可能性があります。続行しますか?</string>
+    <string name="checkbox_metered_network_warning">今後表示しない</string>
     <!-- Info section -->
     <string name="maintainer_info_title">メンテナ</string>
     <string name="donate_info_title">寄付</string>
@@ -104,11 +104,11 @@
     <string name="forum_info_summary">フォーラムの記事を表示</string>
     <string name="error_open_url">ブラウザで URL を開くのに失敗しました</string>
     <!-- Local update -->
-    <string name="local_update_title">Local update</string>
-    <string name="local_update_summary">Apply update from local storage</string>
-    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
-    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
-    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_title">ローカルアップデート</string>
+    <string name="local_update_summary">ローカルストレージからアップデートを適用する</string>
+    <string name="local_update_import_success">選択しました:\n%1$s\n\nインストールしますか？</string>
+    <string name="local_update_import_disabled">アップデートをダウンロードまたはインストール中はローカルアップデートをインポートできません</string>
+    <string name="local_update_import_failure">ローカルアップデートのインポートに失敗しました</string>
     <string name="local_update_import_install">インストール</string>
-    <string name="local_update_import_progress">Importing local update\u2026</string>
+    <string name="local_update_import_progress">ローカルアップデートをインポート中\u2026</string>
 </resources>

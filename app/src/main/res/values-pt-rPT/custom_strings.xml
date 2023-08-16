@@ -74,10 +74,10 @@
     <string name="dialog_battery_low_title">Bateria fraca</string>
     <string name="dialog_battery_low_message_pct">O nível de bateria está muito baixo. Precisa de, pelo menos, <xliff:g id="percent_discharging">%1$d</xliff:g>%% de bateria para continuar ou <xliff:g id="percent_charging">%2$d</xliff:g>%% se estiver a carregar.</string>
     <!-- Export update -->
-    <string name="update_export_success">Update exported</string>
-    <string name="update_export_failed">Failed to export update</string>
-    <string name="update_export_in_progress">Already exporting an update</string>
-    <string name="update_export_started">The update is being exported…</string>
+    <string name="update_export_success">Atualização exportada</string>
+    <string name="update_export_failed">Falha ao exportar atualização</string>
+    <string name="update_export_in_progress">Uma atualização já está sendo exportada</string>
+    <string name="update_export_started">A atualização está sendo exportada…</string>
     <!-- ETA -->
     <plurals name="eta_seconds">
         <item quantity="one">Falta 1 segundo</item>
@@ -92,9 +92,9 @@
         <item quantity="other">Faltam <xliff:g id="count">%d</xliff:g> horas</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_over_metered_network_title">Warning</string>
-    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_metered_network_warning">Do not show again</string>
+    <string name="update_over_metered_network_title">Atenção</string>
+    <string name="update_over_metered_network_message">Está prestes a transferir uma atualização através de uma rede de acesso limitado, o que provavelmente irá resultar num elevado consumo de dados. Deseja continuar?</string>
+    <string name="checkbox_metered_network_warning">Não mostrar novamente</string>
     <!-- Info section -->
     <string name="maintainer_info_title">Mantido por</string>
     <string name="donate_info_title">Doar</string>
@@ -107,11 +107,11 @@
     <string name="forum_info_summary">Ver publicações no fórum</string>
     <string name="error_open_url">Falha ao abrir o URL no navegador</string>
     <!-- Local update -->
-    <string name="local_update_title">Local update</string>
-    <string name="local_update_summary">Apply update from local storage</string>
-    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
-    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
-    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_title">Atualização local</string>
+    <string name="local_update_summary">Aplicar atualização a partir do armazenamento</string>
+    <string name="local_update_import_success">Você escolheu:\n%1$s\n\nVocê quer instalá-lo?</string>
+    <string name="local_update_import_disabled">Não é possível importar a atualização local durante o download ou instalação de atualização</string>
+    <string name="local_update_import_failure">Falha ao importar a atualização local</string>
     <string name="local_update_import_install">Instalar</string>
-    <string name="local_update_import_progress">Importing local update\u2026</string>
+    <string name="local_update_import_progress">Importando atualização local\u2026</string>
 </resources>

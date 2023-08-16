@@ -30,7 +30,7 @@
     <string name="download_completed_notification">Pobieranie zakończone</string>
     <string name="download_starting_notification">Rozpoczęcie pobierania</string>
     <string name="update_failed_notification">Aktualizacja nie powiodła się</string>
-    <string name="check_for_update">Check for update</string>
+    <string name="check_for_update">Sprawdź dostępność aktualizacji</string>
     <!-- Menu -->
     <string name="menu_delete_update">Usuń</string>
     <string name="menu_export_update">Wyślij aktualizację</string>
@@ -47,7 +47,7 @@
     <string name="list_verifying_update">Sprawdzanie aktualizacji</string>
     <string name="list_no_updates">Nie znaleziono nowych aktualizacji. Aby ręcznie sprawdzić dostępność nowych aktualizacji, użyj przycisku Odśwież.</string>
     <string name="blocked_update_dialog_title">Aktualizacja zablokowana</string>
-    <string name="blocked_update_dialog_summary">This update requires a manual clean install procedure (Wiping/Formatting the Data partition before installing the update). Please download the update from our website, reboot to recovery mode and follow the procedures to do so.</string>
+    <string name="blocked_update_dialog_summary">Ta aktualizacja wymaga ręcznej procedury instalacji (czyszczenie/Formatowanie partycji Danych przed zainstalowaniem aktualizacji) Pobierz aktualizację z naszej strony internetowej, uruchom ponownie do trybu recovery i przestrzegaj procedur aby to zrobić.</string>
     <!-- Actions -->
     <string name="action_download">Pobierz</string>
     <string name="action_pause">Wstrzymaj</string>
@@ -59,9 +59,9 @@
     <string name="pause_button">Wstrzymaj</string>
     <string name="resume_button">Wznów</string>
     <string name="reboot">Uruchom ponownie</string>
-    <string name="reboot_needed_dialog_title">Restart needed</string>
-    <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
-    <string name="details_button">View details</string>
+    <string name="reboot_needed_dialog_title">Wymagany restart</string>
+    <string name="reboot_needed_dialog_summary">Aby zakończyć instalację aktualizacji, urządzenie musi zostać zrestartowane. Czy chcesz zrestartować?</string>
+    <string name="details_button">Pokaż szczegóły</string>
     <!-- Installation -->
     <string name="apply_update_dialog_title">Zastosuj aktualizację</string>
     <string name="apply_update_dialog_message">Masz zamiar zaktualizować do <xliff:g id="update_name">%1$s</xliff:g>.\n\nGdy naciśniesz <xliff:g id="ok">%2$s</xliff:g>, urządzenie uruchomi się ponownie w trybie recovery, aby zainstalować aktualizację.\n\nUwaga: Ta funkcja wymaga kompatybilnego recovery, w innym przypadku aktualizację należy zainstalować ręcznie.</string>
@@ -74,9 +74,9 @@
     <string name="dialog_battery_low_title">Niskim poziom baterii</string>
     <string name="dialog_battery_low_message_pct">Poziom naładowania baterii jest zbyt niski, musisz mieć co najmniej <xliff:g id="percent_discharging">%1$d</xliff:g>%% baterii lub <xliff:g id="percent_charging">%2$d</xliff:g>%% w trakcie ładowania.</string>
     <!-- Export update -->
-    <string name="update_export_success">Update exported</string>
-    <string name="update_export_failed">Failed to export update</string>
-    <string name="update_export_in_progress">Already exporting an update</string>
+    <string name="update_export_success">Aktualizacja została wyeksportowana</string>
+    <string name="update_export_failed">Nie można wyeksportować aktualizacji</string>
+    <string name="update_export_in_progress">Aktualizacja jest już eksportowana</string>
     <string name="update_export_started">The update is being exported…</string>
     <!-- ETA -->
     <plurals name="eta_seconds">
@@ -98,9 +98,9 @@
         <item quantity="other">Pozostało <xliff:g id="count">%d</xliff:g> godzin</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_over_metered_network_title">Warning</string>
-    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_metered_network_warning">Do not show again</string>
+    <string name="update_over_metered_network_title">Ostrzeganie</string>
+    <string name="update_over_metered_network_message">Zamierzasz pobrać pakiet aktualizacji za pośrednictwem sieci komórkowej, co prawdopodobnie spowoduje duże zużycie danych. Czy chcesz kontynuować?</string>
+    <string name="checkbox_metered_network_warning">Nie pokazuj ponownie</string>
     <!-- Info section -->
     <string name="maintainer_info_title">Opiekun</string>
     <string name="donate_info_title">Dotacja</string>
@@ -113,11 +113,11 @@
     <string name="forum_info_summary">Zobacz posty na forum</string>
     <string name="error_open_url">Nie można otworzyć adresu URL w przeglądarce</string>
     <!-- Local update -->
-    <string name="local_update_title">Local update</string>
-    <string name="local_update_summary">Apply update from local storage</string>
-    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
-    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
-    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_title">Lokalna aktualizacja</string>
+    <string name="local_update_summary">Zastosuj aktualizacje z pamięci lokalnej</string>
+    <string name="local_update_import_success">Wybrałeś\n%1$s\n\nCzy chcesz go zainstalować?</string>
+    <string name="local_update_import_disabled">Nie można importować lokalnej aktualizacji podczas pobierania lub instalowania aktualizacji</string>
+    <string name="local_update_import_failure">Importowanie lokalnej aktualizacji nie powiodło się</string>
     <string name="local_update_import_install">Instaluj</string>
-    <string name="local_update_import_progress">Importing local update\u2026</string>
+    <string name="local_update_import_progress">Import lokalnej aktualizacji\u2026</string>
 </resources>

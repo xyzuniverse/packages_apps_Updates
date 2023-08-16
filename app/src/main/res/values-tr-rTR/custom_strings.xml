@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App name -->
-    <string name="app_name">Sistem güncellemeleri</string>
+    <string name="app_name">Sistem güncellemesi</string>
     <!-- Notifications -->
     <string name="export_channel_title">Dışa aktarma tamamlandı</string>
     <string name="new_updates_channel_title">Yeni güncellemeler</string>
@@ -60,8 +60,8 @@
     <string name="resume_button">Devam</string>
     <string name="reboot">Yeniden başlat</string>
     <string name="reboot_needed_dialog_title">Yeniden başlatma gerekli</string>
-    <string name="reboot_needed_dialog_summary">To complete the installation of the update, your device needs to be restarted. Do you want to restart now?</string>
-    <string name="details_button">View details</string>
+    <string name="reboot_needed_dialog_summary">Güncellemenin kurulumunu tamamlamak için cihazınızın yeniden başlatılması gerekiyor. Şimdi yeniden başlatmak istiyor musunuz?</string>
+    <string name="details_button">Ayrıntıları göster</string>
     <!-- Installation -->
     <string name="apply_update_dialog_title">Güncellemeyi uygula</string>
     <string name="apply_update_dialog_message"><xliff:g id="update_name">%1$s</xliff:g> yükseltmek üzeresiniz.\n\n<xliff:g id="ok">%2$s</xliff:g> bastığınızda, güncellemeyi yüklemek için cihaz kurtarma modun da yeniden başlatılacak.\n\nNot: Bu özellik uyumlu bir Kurtarma bölümü gerektirir veya güncellemelerin el ile kurulması gerekir.</string>
@@ -74,10 +74,10 @@
     <string name="dialog_battery_low_title">Düşük pil</string>
     <string name="dialog_battery_low_message_pct">Pil seviyesi çok düşük, devam etmek için en az <xliff:g id="percent_discharging">%1$d</xliff:g>%% pil gereklidir, <xliff:g id="percent_charging">%2$d</xliff:g>%% şarj ediliyor.</string>
     <!-- Export update -->
-    <string name="update_export_success">Update exported</string>
-    <string name="update_export_failed">Failed to export update</string>
-    <string name="update_export_in_progress">Already exporting an update</string>
-    <string name="update_export_started">The update is being exported…</string>
+    <string name="update_export_success">Güncelleme dışa aktarıldı</string>
+    <string name="update_export_failed">Güncelleme dışa aktarımı başarısız</string>
+    <string name="update_export_in_progress">Bir güncelleme zaten dışa aktarılıyor</string>
+    <string name="update_export_started">Güncelleme dışa aktarılıyor…</string>
     <!-- ETA -->
     <plurals name="eta_seconds">
         <item quantity="one">1 saniye kaldı</item>
@@ -92,9 +92,9 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> saat kaldı</item>
     </plurals>
     <!-- Mobile data warning -->
-    <string name="update_over_metered_network_title">Warning</string>
-    <string name="update_over_metered_network_message">You\'re about to download an update package over a metered network which is likely going to cause high data usage. Would you like to proceed?</string>
-    <string name="checkbox_metered_network_warning">Do not show again</string>
+    <string name="update_over_metered_network_title">Uyarı</string>
+    <string name="update_over_metered_network_message">Mobil veri kullanarak, büyük olasılıkla yüksek veri kullanımına yol açacak bir güncelleme paketi indirmek üzeresiniz. Devam etmek ister misiniz?</string>
+    <string name="checkbox_metered_network_warning">Tekrar gösterme</string>
     <!-- Info section -->
     <string name="maintainer_info_title">Cihaz sorumlusu</string>
     <string name="donate_info_title">Bağış yap</string>
@@ -107,11 +107,11 @@
     <string name="forum_info_summary">Forum mesajlarını görüntüle</string>
     <string name="error_open_url">URL\'yi tarayıcıda açılamadı</string>
     <!-- Local update -->
-    <string name="local_update_title">Local update</string>
-    <string name="local_update_summary">Apply update from local storage</string>
-    <string name="local_update_import_success">You have chosen:\n%1$s\n\nDo you want to install it?</string>
-    <string name="local_update_import_disabled">Can\'t import local update when downloading or installing update</string>
-    <string name="local_update_import_failure">Failed to import local update</string>
+    <string name="local_update_title">Yerel güncelleme</string>
+    <string name="local_update_summary">Güncellemeyi yerel depolamadan uygula</string>
+    <string name="local_update_import_success">Şunları seçtiniz:\n%1$s\n\nYüklemek istiyor musunuz?</string>
+    <string name="local_update_import_disabled">Güncelleme indirilirken veya kurulurken yerel güncelleme alınamıyor</string>
+    <string name="local_update_import_failure">Yerel güncelleme içe aktarılamadı</string>
     <string name="local_update_import_install">Yükle</string>
-    <string name="local_update_import_progress">Importing local update\u2026</string>
+    <string name="local_update_import_progress">Yerel güncelleme içe aktarılıyor\u2026</string>
 </resources>
